@@ -1,0 +1,231 @@
+/* --- GLOBAL RESET & STABILITY --- */
+html,
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Playfair Display", serif;
+  color: #E5E4E2;
+}
+
+/* Fix for background "leaks" and seams between sections */
+section,
+.CONTINUOUS-INVITATION-AREA,
+#hero,
+#couple {
+  position: relative;
+  margin-top: -1px;
+  padding-bottom: 1px;
+  background-color: transparent;
+  z-index: 1;
+}
+
+/* --- TYPOGRAPHY --- */
+.script {
+  font-family: "Great Vibes", cursive;
+}
+
+.suravaram {
+  font-family: "Suravaram", serif;
+}
+
+/* --- HERO SECTION & TEMPLE --- */
+#hero {
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(to bottom, #001133, #002366, #334e8d);
+  overflow: hidden;
+}
+
+#temple-group {
+  position: absolute;
+  top: 65vh;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  width: 100%;
+  max-width: 1000px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  will-change: transform;
+}
+
+#temple {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#names {
+  position: absolute;
+  top: 8vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 110;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+/* --- THORANAM GAP PATCH --- */
+#thoranam-bottom {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 10;
+  opacity: 0;
+  /* Animated via GSAP */
+  brightness: 110%;
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
+}
+
+/* --- ANIMATED ELEMENTS (Lanterns & Petals) --- */
+.lantern {
+  position: absolute;
+  width: 65px;
+  filter: drop-shadow(0 0 25px #ff9ed9);
+  animation: floatLantern 25s linear infinite;
+}
+
+@keyframes floatLantern {
+  0% {
+    transform: translateY(120vh) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-150vh) rotate(25deg);
+  }
+}
+
+.petal {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle, #ff69b4, #ff1493);
+  border-radius: 50% 0 50% 50%;
+  opacity: 0.75;
+  animation: fallPetals linear infinite;
+}
+
+@keyframes fallPetals {
+  to {
+    transform: translateY(900px) rotate(800deg);
+  }
+}
+
+/* --- CURSOR --- */
+#custom-cursor {
+  width: 24px;
+  height: 24px;
+  background: rgba(212, 175, 55, 0.4);
+  border: 1px solid rgba(212, 175, 55, 0.8);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  backdrop-filter: blur(2px);
+}
+
+/* --- INVITATION AREA --- */
+.CONTINUOUS-INVITATION-AREA {
+  background-image: url("assets/56kvO.jpg");
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-position: center top;
+  width: 100%;
+}
+
+.event-card {
+  background-image: url("assets/frame.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 3rem;
+  text-align: center;
+  color: #E5E4E2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  margin: 2rem 0;
+}
+
+.card-sumuhurtham {
+  transform: rotate(-2deg);
+}
+
+.card-venue {
+  transform: rotate(1.5deg);
+}
+
+.card-dinner {
+  transform: rotate(-1deg);
+}
+
+/* --- RESPONSIVE SETTINGS --- */
+
+/* MOBILE ONLY (< 768px) */
+@media (max-width: 767px) {
+  #hero {
+    width: 100%;
+    height: 100vh;
+  }
+
+  #temple-group {
+    width: 100%;
+    transform: translateX(-50%) scale(0.9);
+  }
+
+  #thoranam-bottom {
+    transform: scale(1.25);
+    margin-top: 0;
+  }
+}
+
+/* DESKTOP ONLY (>= 768px) */
+@media (min-width: 768px) {
+  #temple {
+    clip-path: inset(0 0 2% 0);
+    /* Subtle clip to clean edges */
+  }
+
+  #temple-group {
+    transform: translateX(-50%) scale(1.1);
+    width: 100%;
+  }
+
+  /* Desktop Patch to hide the seam shown in your image */
+  #thoranam-bottom {
+    margin-top: -30px;
+    /* Pulls thoranam UP to cover the gap */
+    transform: scale(1.4);
+    width: 115%;
+  }
+
+  /* Event Card Desktop Layout */
+  .card-sumuhurtham {
+    align-self: flex-start;
+    margin-left: 2.5rem;
+    margin-bottom: -150px;
+    min-height: 450px;
+  }
+
+  .card-venue {
+    align-self: flex-end;
+    margin-right: 5rem;
+    margin-top: -60px;
+    margin-bottom: -120px;
+    min-height: 400px;
+  }
+
+  .card-dinner {
+    margin-top: -5rem;
+    margin-left: -16rem;
+    min-height: 420px;
+    max-width: 400px;
+  }
+}
