@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280" />
+  <title>Siva Weds Jahnavi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Suravaram&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap");
+
+    body {
+      font-family: "Playfair Display", serif;
+      overflow-x: auto;
+      background-color: #0a1428;
+      min-width: 1280px;
+    }
+
+    .script {
+      font-family: "Great Vibes", cursive;
+    }
+
+    .suravaram {
+      font-family: "Suravaram", serif;
+    }
+
+    .GLOBAL-BG-WRAPPER {
+      background-image: url("assets/56kvO.jpg");
+      background-size: 100% auto;
+      background-repeat: repeat-y;
+      background-position: top center;
+    }
+
+    .lantern {
+      position: absolute;
+      width: 65px;
+      filter: drop-shadow(0 0 25px #ff9ed9);
+      animation: floatLantern 25s linear infinite;
+    }
+
+    @keyframes floatLantern {
+      0% {
+        transform: translateY(120vh) rotate(0deg);
+      }
+
+      100% {
+        transform: translateY(-150vh) rotate(25deg);
+      }
+    }
+
+    #hero {
+      height: 100vh;
+      position: relative;
+      background: linear-gradient(to bottom, #001133, #002366, #334e8d);
+    }
+
+    #temple-group {
+      position: absolute;
+      top: 65vh;
+      left: 50%;
+      transform: translateX(-50%) scale(1.32);
+      width: 100%;
+      max-width: 1000px;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      will-change: transform;
+    }
+
+    #temple {
+      width: 100%;
+      clip-path: inset(0 0 12% 0);
+    }
+
+    #names {
+      position: absolute;
+      top: 8vh;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 110;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    }
+
+    .petal {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: radial-gradient(circle, #ff69b4, #ff1493);
+      border-radius: 50% 0 50% 50%;
+      opacity: 0.75;
+      animation: fallPetals linear infinite;
+    }
+
+    @keyframes fallPetals {
+      to {
+        transform: translateY(900px) rotate(800deg);
+      }
+    }
+
+    /* CUSTOM CURSOR */
+    #custom-cursor {
+      width: 24px;
+      height: 24px;
+      background: rgba(212, 175, 55, 0.4);
+      border: 1px solid rgba(212, 175, 55, 0.8);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 10000;
+      backdrop-filter: blur(2px);
+    }
+  </style>
+</head>
+
+<body class="text-[#E5E4E2]">
+  <div id="custom-cursor"></div>
+  <section id="hero" class="relative z-50">
+    <div id="lanterns" class="absolute inset-0 pointer-events-none"></div>
+
+    <div id="names" class="px-4">
+      <h1 class="text-8xl script text-[#E5E4E2] drop-shadow-2xl">
+        Siva
+      </h1>
+      <p class="text-5xl mt-2 tracking-widest text-[#E5E4E2] opacity-90 font-serif">
+        WEDS
+      </p>
+      <h1 class="text-8xl script text-[#E5E4E2] drop-shadow-2xl mt-2">
+        Jahnavi
+      </h1>
+    </div>
+
+    <div id="temple-group">
+      <img id="temple" src="assets/temple.png" alt="Temple" />
+      <img src="assets/thoranam.png" alt="Thoranam"
+        class="max-w-[1200px] w-[95%] h-auto -mt-8 relative z-10 brightness-110 drop-shadow-[0_0_20px_rgba(255,215,0,0.8)]" />
+    </div>
+  </section>
+
+
+  <div class="CONTINUOUS-INVITATION-AREA relative z-10" style="
+        background-image: url(&quot;assets/56kvO.jpg&quot;);
+        background-size: 100% auto;
+        background-repeat: repeat-y;
+        background-position: top center;
+      ">
+
+    <section class="min-h-screen relative flex flex-col items-center">
+      <div class="max-w-4xl w-[90%] mx-auto text-center px-10 pt-20 pb-20 shadow-2xl mt-96 relative z-20" style="
+            background-image: url(&quot;assets/innerbg.jpg&quot;);
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            border: 4px solid #800000;
+          ">
+        <h2 class="suravaram text-6xl mb-8 text-[#D4AF37]">ఓం శ్రీ గణేశాయ నమః</h2>
+
+
+        <div class="my-16">
+          <img src="assets/ganesha.png" alt="Ganesha" class="mx-auto w-44 drop-shadow-xl" />
+        </div>
+        <p class="text-2xl text-[#D4AF37]">Betha's Wedding Invitation</p>
+        <p class="text-3xl mt-6 text-[#D4AF37] font-bold">
+          Sri Betha Gangu Naidu & Smt. Lakshmi
+        </p>
+        <p class="text-2xl tracking-widest text-[#D4AF37]">INVITE YOU TO</p>
+        <p class="text-3xl script mt-10 text-[#D4AF37]">
+          The wedding celebrations of our Elder Daughter
+        </p>
+
+        <div class="mt-8">
+          <h1 class="script text-8xl text-[#D4AF37]">Siva & Jahnavi</h1>
+          <p class="text-xl mt-4 text-[#D4AF37] opacity-80 italic">
+            Chi. La. Sow. Jahnavi
+          </p>
+          <p class="text-xl mt-4 text-[#D4AF37] opacity-80 italic">
+            Weds
+          </p>
+          <p class="text-xl mt-4 text-[#D4AF37] opacity-80 italic">
+            Chi. Siva Kumar
+          </p>
+        </div>
+
+        <div class="mt-12 text-[#D4AF37] text-xl">
+          <p>Younger Son of</p>
+          <p class="text-2xl font-bold text-[#D4AF37]">
+            Sri Nangi Reddy (Late) Padala Naidu & Smt. Ramudamma
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section class="min-h-screen py-20 relative overflow-hidden -mt-16">
+      <div class="max-w-6xl mx-auto px-6 relative flex flex-col items-center">
+        <!-- Sumuhurtham -->
+        <div
+          class="p-12 text-center text-[#E5E4E2] flex flex-col justify-center min-h-[450px] w-[480px] self-start ml-10"
+          style="
+              background-image: url(&quot;assets/frame.png&quot;);
+              background-size: 100% 100%;
+              background-repeat: no-repeat;
+              transform: rotate(-2deg);
+              margin-bottom: -150px;
+              z-index: 10;
+            ">
+          <div class="text-3xl mb-4">🕒</div>
+          <h3 class="text-3xl font-bold uppercase tracking-widest">
+            Sumuhurtham
+          </h3>
+          <p class="mt-6 text-xl">
+            Sunday, 29th March 2026<br />
+            <span class="text-2xl font-bold">at 09:52 PM</span>
+          </p>
+        </div>
+
+        <!-- Venue -->
+        <div
+          class="p-12 text-center text-[#E5E4E2] flex flex-col justify-center min-h-[400px] w-[450px] self-end mr-20"
+          style="
+              background-image: url(&quot;assets/frame.png&quot;);
+              background-size: 100% 100%;
+              background-repeat: no-repeat;
+              transform: rotate(1.5deg);
+              margin-top: -60px;
+              margin-bottom: -120px;
+              z-index: 11;
+            ">
+          <div class="text-3xl mb-4">📍</div>
+          <h3 class="text-3xl font-bold uppercase tracking-widest">Venue</h3>
+          <p class="mt-6 text-lg">
+            <span class="text-2xl font-bold">Shree Convention</span><br />
+            Beside RTC Complex,<br />
+            Gajapathinagaram
+          </p>
+          <a href="https://www.google.com/maps/place/Shree+Conventions/@18.2828512,83.3356718,17z/data=!3m1!4b1!4m6!3m5!1s0x3a3beb007889a9cd:0xaacbe3c99ef226dd!8m2!3d18.2828512!4d83.3356718!16s%2Fg%2F11wmxwdjlz!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDMyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="block mt-6 underline opacity-80">See the route</a>
+        </div>
+
+        <!-- Dinner -->
+        <div
+          class="p-12 text-center text-[#E5E4E2] flex flex-col justify-col justify-center min-h-[420px] w-[400px] -mt-20 -ml-64 z-20"
+          style="
+              background-image: url(&quot;assets/frame.png&quot;);
+              background-size: 100% 100%;
+              background-repeat: no-repeat;
+              transform: rotate(-1deg);
+            ">
+          <div class="text-3xl mb-4">🍽️</div>
+          <h3 class="text-3xl font-bold uppercase tracking-widest">Dinner</h3>
+          <p class="mt-6 text-2xl font-bold">7:00 PM Onwards</p>
+        </div>
+      </div>
+    </section>
+    <!-- SEE THE ROUTE -->
+    <section class="min-h-[60vh] flex items-center justify-center relative -mt-32">
+      <img src="assets/car.png" alt="Blue Car" class="max-w-lg drop-shadow-2xl" />
+      <a href="https://www.google.com/maps/place/Shree+Conventions/@18.2828512,83.3356718,17z/data=!3m1!4b1!4m6!3m5!1s0x3a3beb007889a9cd:0xaacbe3c99ef226dd!8m2!3d18.2828512!4d83.3356718!16s%2Fg%2F11wmxwdjlz!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDMyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="absolute bottom-10 text-center text-[#E5E4E2] hover:scale-105 transition-transform">
+        <h2 class="text-5xl script text-[#E5E4E2]">See the route</h2>
+        <p class="mt-4">Click to open the map</p>
+      </a>
+    </section>
+  </div>
+
+  <section id="couple" class="min-h-screen bg-[#e8c7d9] relative overflow-hidden" style="
+        background:
+          radial-gradient(
+            circle at center,
+            rgba(30, 58, 138, 0.4) 0%,
+            rgba(10, 20, 40, 0.8) 100%
+          ),
+          url(&quot;assets/56kvO.jpg&quot;);
+        background-size: cover;
+      ">
+    <div class="max-w-2xl mx-auto text-center pt-20">
+      <h2 class="script text-7xl text-[#E5E4E2]">Bride and Groom</h2>
+      <div id="photo-frame" class="relative mx-auto mt-16 w-96">
+        <img src="assets/couple.jpeg" alt="Couple" class="rounded-xl shadow-2xl border-4 border-[#E5E4E2]" />
+      </div>
+    </div>
+    <div id="petals-container" class="absolute inset-0 pointer-events-none"></div>
+  </section>
+
+
+  <section class="min-h-screen bg-white text-gray-800 text-center py-20 px-6 relative flex flex-col items-center justify-center">
+    <h2 class="text-6xl font-serif mb-2">Our Wedding Day</h2>
+    <p class="text-xl mb-12 opacity-70">Save the Date!</p>
+
+    <div class="flex flex-wrap justify-center gap-8 mb-16 px-4">
+      <!-- COUNTDOWN CIRCLES -->
+      <div class="flex flex-col items-center">
+        <div class="relative w-32 h-32 flex items-center justify-center">
+          <svg class="w-full h-full transform -rotate-90">
+            <circle cx="64" cy="64" r="58" stroke="currentColor" stroke-width="4" fill="transparent" class="text-gray-200" />
+            <circle id="days-ring" cx="64" cy="64" r="58" stroke="#D4AF37" stroke-width="4" fill="transparent" stroke-dasharray="364.4" stroke-dashoffset="364.4" class="transition-all duration-1000" />
+          </svg>
+          <div id="days-val" class="absolute text-4xl font-light">00</div>
+        </div>
+        <span class="mt-4 text-gray-500 uppercase tracking-widest text-sm font-bold">Days</span>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <div class="relative w-32 h-32 flex items-center justify-center">
+          <svg class="w-full h-full transform -rotate-90">
+            <circle cx="64" cy="64" r="58" stroke="currentColor" stroke-width="4" fill="transparent" class="text-gray-200" />
+            <circle id="hours-ring" cx="64" cy="64" r="58" stroke="#D4AF37" stroke-width="4" fill="transparent" stroke-dasharray="364.4" stroke-dashoffset="364.4" class="transition-all duration-1000" />
+          </svg>
+          <div id="hours-val" class="absolute text-4xl font-light">00</div>
+        </div>
+        <span class="mt-4 text-gray-500 uppercase tracking-widest text-sm font-bold">Hours</span>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <div class="relative w-32 h-32 flex items-center justify-center">
+          <svg class="w-full h-full transform -rotate-90">
+            <circle cx="64" cy="64" r="58" stroke="currentColor" stroke-width="4" fill="transparent" class="text-gray-200" />
+            <circle id="minutes-ring" cx="64" cy="64" r="58" stroke="#D4AF37" stroke-width="4" fill="transparent" stroke-dasharray="364.4" stroke-dashoffset="364.4" class="transition-all duration-1000" />
+          </svg>
+          <div id="minutes-val" class="absolute text-4xl font-light">00</div>
+        </div>
+        <span class="mt-4 text-gray-500 uppercase tracking-widest text-sm font-bold">Minutes</span>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <div class="relative w-32 h-32 flex items-center justify-center">
+          <svg class="w-full h-full transform -rotate-90">
+            <circle cx="64" cy="64" r="58" stroke="currentColor" stroke-width="4" fill="transparent" class="text-gray-200" />
+            <circle id="seconds-ring" cx="64" cy="64" r="58" stroke="#D4AF37" stroke-width="4" fill="transparent" stroke-dasharray="364.4" stroke-dashoffset="364.4" class="transition-all duration-1000" />
+          </svg>
+          <div id="seconds-val" class="absolute text-4xl font-light">00</div>
+        </div>
+        <span class="mt-4 text-gray-500 uppercase tracking-widest text-sm font-bold">Seconds</span>
+      </div>
+    </div>
+
+    <div class="text-center space-y-6 max-w-lg">
+      <div class="text-3xl font-serif">
+        <p class="font-bold">Shree Convention</p>
+        <p class="text-xl opacity-80 mt-1">Gajapathinagaram, Vizianagaram</p>
+      </div>
+
+      <div class="pt-10 border-t border-gray-100">
+        <h4 class="font-bold text-2xl mb-6">Contacts</h4>
+        <div class="space-y-2 text-lg">
+          <p><span class="opacity-60">Sri Betha Gangu Naidu:</span> <span class="font-bold">+91 9440620358</span></p>
+          <p><span class="opacity-60">Jahnavi Betha:</span> <span class="font-bold">jahnavibetha@email.com</span></p>
+        </div>
+      </div>
+      <div class="pt-16 pb-8 flex justify-center opacity-40 hover:opacity-100 transition-opacity">
+        <a href="https://portfolio-thotakalicharan.vercel.app/" target="_blank" title="Developer Portfolio" class="flex flex-col items-center gap-2 group">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <span class="text-xs tracking-widest uppercase text-center">Contact Developer</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    function createLanterns() {
+      const container = document.getElementById("lanterns");
+      for (let i = 0; i < 14; i++) {
+        const lantern = document.createElement("img");
+        lantern.src = "assets/latern.png";
+        lantern.className = "lantern";
+        lantern.style.left = Math.random() * 100 + "vw";
+        lantern.style.animationDuration = 20 + Math.random() * 20 + "s";
+        lantern.style.animationDelay = "-" + Math.random() * 40 + "s";
+        container.appendChild(lantern);
+      }
+    }
+
+    function createPetals() {
+      const container = document.getElementById("petals-container");
+      for (let i = 0; i < 35; i++) {
+        const petal = document.createElement("div");
+        petal.className = "petal";
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.animationDuration = 6 + Math.random() * 10 + "s";
+        petal.style.animationDelay = "-" + Math.random() * 12 + "s";
+        petal.style.opacity = Math.random() * 0.6 + 0.4;
+        container.appendChild(petal);
+      }
+    }
+
+    function animateTemple() {
+      const templeGroup = document.getElementById("temple-group");
+      const names = document.getElementById("names");
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#hero",
+          start: "top top",
+          end: "+=200%",
+          scrub: 1.5,
+          pin: true,
+          markers: false,
+        },
+      });
+
+      tl.to(
+        templeGroup,
+        {
+          scale: 1.98,
+          y: -1200,
+          ease: "none",
+        },
+        0,
+      );
+
+      tl.to(
+        names,
+        {
+          opacity: 0,
+          y: -100,
+          ease: "none",
+        },
+        0,
+      );
+    }
+
+    function startCountdown() {
+      const target = new Date("2026-03-29T21:52:00").getTime();
+      const circleCircumference = 364.4;
+
+      function updateCircle(id, value, max) {
+        const ring = document.getElementById(`${id}-ring`);
+        const valText = document.getElementById(`${id}-val`);
+        if (ring && valText) {
+          const offset = circleCircumference - (value / max) * circleCircumference;
+          ring.style.strokeDashoffset = offset;
+          valText.innerText = value.toString().padStart(2, "0");
+        }
+      }
+
+      setInterval(() => {
+        const now = new Date().getTime();
+        const diff = target - now;
+
+        if (diff > 0) {
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          );
+          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+          updateCircle("days", days, 30); // Using 30 as a baseline for Days ring
+          updateCircle("hours", hours, 24);
+          updateCircle("minutes", minutes, 60);
+          updateCircle("seconds", seconds, 60);
+        } else {
+          const container = document.querySelector(".flex-wrap.justify-center");
+          if (container) container.innerHTML = "<h2 class='text-4xl font-serif text-teal-600'>The Wedding Celebration has Begun!</h2>";
+        }
+      }, 1000);
+    }
+
+    window.onload = () => {
+      createLanterns();
+      createPetals();
+      animateTemple();
+      startCountdown();
+
+      // Custom Cursor Trailing Effect
+      const cursor = document.getElementById("custom-cursor");
+      window.addEventListener("mousemove", (e) => {
+        gsap.to(cursor, {
+          x: e.clientX,
+          y: e.clientY,
+          duration: 0.2,
+          ease: "power2.out",
+          xPercent: -50,
+          yPercent: -50,
+        });
+      });
+
+      // Show pointer cursor on links
+      document.querySelectorAll("a, button").forEach((el) => {
+        el.addEventListener("mouseenter", () => {
+          gsap.to(cursor, { scale: 1.5, opacity: 0.6 });
+        });
+        el.addEventListener("mouseleave", () => {
+          gsap.to(cursor, { scale: 1, opacity: 0.4 });
+        });
+      });
+
+      // Entrance animation for temple
+      gsap.fromTo(
+        "#temple",
+        { scale: 0.9, opacity: 0 },
+        { scale: 1.32, opacity: 1, duration: 2.5, ease: "power2.out" },
+      );
+    };
+  </script>
+</body>
+
+</html>
