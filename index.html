@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jahnavi weds Siva</title>
+  <title>Siva Weds Jahnavi</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Suravaram&display=swap"
@@ -12,26 +13,43 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="text-[#E5E4E2]">
 
+<body class="text-[#E5E4E2]">
+  <!-- ENTRY SCREEN -->
+  <div id="entry-screen"
+    class="fixed inset-0 flex flex-col items-center justify-center z-[9999] text-center transition-opacity duration-1000 overflow-hidden"
+    style="background: linear-gradient(to bottom, #001133, #002366, #334e8d);">
+    <div id="entry-lanterns" class="absolute inset-0 pointer-events-none"></div>
+    <img src="assets/couple.png" alt="Couple"
+      class="w-40 sm:w-48 md:w-64 mb-6 rounded-full border-4 border-[#E5E4E2] shadow-2xl z-10" />
+    <h1 class="text-5xl md:text-7xl script mb-6 text-[#E5E4E2] z-10">Jahnavi & Siva</h1>
+    <button onclick="enterSite()"
+      class="px-8 py-4 text-xl border border-[#E5E4E2] rounded-full hover:bg-[#E5E4E2] hover:text-black transition-all z-10">
+      Tap to Enter 💍
+    </button>
+  </div>
+
+  <!-- AUDIO (Required for Entry Script) -->
   <audio id="wedding-song" loop preload="auto" playsinline>
     <source src="song.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
-  <div id="custom-cursor"></div>
+  <div id="main-content" class="opacity-0 pointer-events-none transition-opacity duration-1000">
+    <div id="custom-cursor"></div>
+
 
   <section id="hero" class="relative z-50">
     <div id="lanterns" class="absolute inset-0 pointer-events-none"></div>
     <div id="names" class="px-4">
       <h1 class="text-6xl md:text-8xl script text-[#E5E4E2] drop-shadow-2xl">
-        Jahnavi
+        Siva
       </h1>
       <p class="text-3xl md:text-5xl mt-2 tracking-widest text-[#E5E4E2] opacity-90 font-serif">
         WEDS
       </p>
       <h1 class="text-6xl md:text-8xl script text-[#E5E4E2] drop-shadow-2xl mt-2">
-        Siva
+        Jahnavi
       </h1>
     </div>
     <div id="temple-group">
@@ -71,7 +89,7 @@
           The wedding celebrations of our Elder Daughter
         </p>
         <div class="mt-8">
-          <h1 class="script text-8xl text-[#D4AF37]">Jahnavi & Siva</h1>
+          <h1 class="script text-8xl text-[#D4AF37]">Siva & Jahnavi</h1>
           <p class="text-xl mt-4 text-[#D4AF37] opacity-80 italic">Chi. La. Sow. Jahnavi</p>
           <p class="text-xl mt-4 text-[#D4AF37] opacity-80 italic">Weds</p>
           <p class="text-xl mt-4 text-[#D4AF37] opacity-80 italic">Chi. Siva Kumar</p>
@@ -103,7 +121,8 @@
             Beside RTC Complex,<br />
             Gajapathinagaram
           </p>
-          <a href="https://www.google.com/maps/place/Shree+Conventions/@18.2828512,83.3356718,17z/data=!3m1!4b1!4m6!3m5!1s0x3a3beb007889a9cd:0xaacbe3c99ef226dd!8m2!3d18.2828512!4d83.3356718!16s%2Fg%2F11wmxwdjlz!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDMyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="block mt-6 underline opacity-80">See the route</a>
+          <a href="https://www.google.com/maps/place/Shree+Conventions/@18.2828512,83.3356718,17z/data=!3m1!4b1!4m6!3m5!1s0x3a3beb007889a9cd:0xaacbe3c99ef226dd!8m2!3d18.2828512!4d83.3356718!16s%2Fg%2F11wmxwdjlz!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDMyMy4xIKXMDSoASAFQAw%3D%3D"
+            target="_blank" class="block mt-6 underline opacity-80">See the route</a>
         </div>
         <div class="event-card card-dinner z-20">
           <div class="text-3xl mb-4">🍽️</div>
@@ -115,32 +134,37 @@
 
     <section class="min-h-[60vh] flex items-center justify-center relative -mt-32">
       <img src="assets/car.png" alt="Blue Car" class="max-w-lg drop-shadow-2xl" />
-      <a href="https://www.google.com/maps/place/Shree+Conventions/@18.2828512,83.3356718,17z/data=!3m1!4b1!4m6!3m5!1s0x3a3beb007889a9cd:0xaacbe3c99ef226dd!8m2!3d18.2828512!4d83.3356718!16s%2Fg%2F11wmxwdjlz!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDMyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="absolute bottom-10 text-center text-[#E5E4E2] hover:scale-105 transition-transform">
+      <a href="https://www.google.com/maps/place/Shree+Conventions/@18.2828512,83.3356718,17z/data=!3m1!4b1!4m6!3m5!1s0x3a3beb007889a9cd:0xaacbe3c99ef226dd!8m2!3d18.2828512!4d83.3356718!16s%2Fg%2F11wmxwdjlz!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDMyMy4xIKXMDSoASAFQAw%3D%3D"
+        target="_blank" class="absolute bottom-10 text-center text-[#E5E4E2] hover:scale-105 transition-transform">
         <h2 class="text-5xl script text-[#E5E4E2]">See the route</h2>
         <p class="mt-4">Click to open the map</p>
       </a>
     </section>
   </div>
 
-  <section id="couple" class="min-h-screen relative overflow-hidden" style="background: url('assets/56kvO.jpg'); background-size: cover; background-position: center top;">
+  <section id="couple" class="min-h-screen relative overflow-hidden"
+    style="background: url('assets/56kvO.jpg'); background-size: cover; background-position: center top;">
     <div class="max-w-2xl mx-auto text-center pt-20">
       <h2 class="script text-7xl text-[#E5E4E2]">Bride and Groom</h2>
       <div id="photo-frame" class="relative mx-auto mt-16 w-96">
-        <img src="assets/couple.jpg" alt="Couple" class="rounded-xl shadow-2xl border-4 border-[#E5E4E2]" />
+        <img src="assets/couple.jpeg" alt="Couple" class="rounded-xl shadow-2xl border-4 border-[#E5E4E2]" />
       </div>
     </div>
     <div id="petals-container" class="absolute inset-0 pointer-events-none"></div>
   </section>
 
-  <section class="min-h-screen bg-white text-gray-800 text-center py-20 px-6 relative flex flex-col items-center justify-center">
+  <section
+    class="min-h-screen bg-white text-gray-800 text-center py-20 px-6 relative flex flex-col items-center justify-center">
     <h2 class="text-6xl font-serif mb-2">Our Wedding Day</h2>
     <p class="text-xl mb-12 opacity-70">Save the Date!</p>
     <div class="flex flex-wrap justify-center gap-8 mb-16 px-4">
       <div class="flex flex-col items-center">
         <div class="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
           <svg class="w-full h-full transform -rotate-90">
-            <circle cx="50%" cy="50%" r="42%" stroke="currentColor" stroke-width="4" fill="transparent" class="text-gray-200" />
-            <circle id="days-ring" cx="50%" cy="50%" r="42%" stroke="#D4AF37" stroke-width="4" fill="transparent" stroke-dasharray="364.4" stroke-dashoffset="364.4" class="transition-all duration-1000" />
+            <circle cx="50%" cy="50%" r="42%" stroke="currentColor" stroke-width="4" fill="transparent"
+              class="text-gray-200" />
+            <circle id="days-ring" cx="50%" cy="50%" r="42%" stroke="#D4AF37" stroke-width="4" fill="transparent"
+              stroke-dasharray="364.4" stroke-dashoffset="364.4" class="transition-all duration-1000" />
           </svg>
           <div id="days-val" class="absolute text-2xl md:text-4xl font-light">00</div>
         </div>
@@ -149,8 +173,10 @@
       <div class="flex flex-col items-center">
         <div class="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
           <svg class="w-full h-full transform -rotate-90">
-            <circle cx="50%" cy="50%" r="42%" stroke="currentColor" stroke-width="4" fill="transparent" class="text-gray-200" />
-            <circle id="hours-ring" cx="50%" cy="50%" r="42%" stroke="#D4AF37" stroke-width="4" fill="transparent" stroke-dasharray="364.4" stroke-dashoffset="364.4" class="transition-all duration-1000" />
+            <circle cx="50%" cy="50%" r="42%" stroke="currentColor" stroke-width="4" fill="transparent"
+              class="text-gray-200" />
+            <circle id="hours-ring" cx="50%" cy="50%" r="42%" stroke="#D4AF37" stroke-width="4" fill="transparent"
+              stroke-dasharray="364.4" stroke-dashoffset="364.4" class="transition-all duration-1000" />
           </svg>
           <div id="hours-val" class="absolute text-2xl md:text-4xl font-light">00</div>
         </div>
@@ -159,8 +185,10 @@
       <div class="flex flex-col items-center">
         <div class="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
           <svg class="w-full h-full transform -rotate-90">
-            <circle cx="50%" cy="50%" r="42%" stroke="currentColor" stroke-width="4" fill="transparent" class="text-gray-200" />
-            <circle id="minutes-ring" cx="50%" cy="50%" r="42%" stroke="#D4AF37" stroke-width="4" fill="transparent" stroke-dasharray="364.4" stroke-dashoffset="364.4" class="transition-all duration-1000" />
+            <circle cx="50%" cy="50%" r="42%" stroke="currentColor" stroke-width="4" fill="transparent"
+              class="text-gray-200" />
+            <circle id="minutes-ring" cx="50%" cy="50%" r="42%" stroke="#D4AF37" stroke-width="4" fill="transparent"
+              stroke-dasharray="364.4" stroke-dashoffset="364.4" class="transition-all duration-1000" />
           </svg>
           <div id="minutes-val" class="absolute text-2xl md:text-4xl font-light">00</div>
         </div>
@@ -169,8 +197,10 @@
       <div class="flex flex-col items-center">
         <div class="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
           <svg class="w-full h-full transform -rotate-90">
-            <circle cx="50%" cy="50%" r="42%" stroke="currentColor" stroke-width="4" fill="transparent" class="text-gray-200" />
-            <circle id="seconds-ring" cx="50%" cy="50%" r="42%" stroke="#D4AF37" stroke-width="4" fill="transparent" stroke-dasharray="364.4" stroke-dashoffset="364.4" class="transition-all duration-1000" />
+            <circle cx="50%" cy="50%" r="42%" stroke="currentColor" stroke-width="4" fill="transparent"
+              class="text-gray-200" />
+            <circle id="seconds-ring" cx="50%" cy="50%" r="42%" stroke="#D4AF37" stroke-width="4" fill="transparent"
+              stroke-dasharray="364.4" stroke-dashoffset="364.4" class="transition-all duration-1000" />
           </svg>
           <div id="seconds-val" class="absolute text-2xl md:text-4xl font-light">00</div>
         </div>
@@ -190,8 +220,11 @@
         </div>
       </div>
       <div class="pt-16 pb-8 flex justify-center opacity-40 hover:opacity-100 transition-opacity">
-        <a href="https://portfolio-thotakalicharan.vercel.app/" target="_blank" title="Developer Portfolio" class="flex flex-col items-center gap-2 group">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform">
+        <a href="https://portfolio-thotakalicharan.vercel.app/" target="_blank" title="Developer Portfolio"
+          class="flex flex-col items-center gap-2 group">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="group-hover:scale-110 transition-transform">
             <polyline points="16 18 22 12 16 6"></polyline>
             <polyline points="8 6 2 12 8 18"></polyline>
           </svg>
@@ -201,46 +234,50 @@
     </div>
   </section>
 
-  <script src="script.js"></script>
+  </div>
 
   <script>
     const audio = document.getElementById('wedding-song');
-    let hasPlayed = false;
 
-    /**
-     * Attempts to play audio. 
-     * Browsers usually require a user interaction (like a scroll or click) 
-     * to allow audio playback.
-     */
-    function startMusic() {
-      if (hasPlayed) return;
-
-      audio.play().then(() => {
-        hasPlayed = true;
-        console.log("Music started on scroll.");
-        
-        // Remove listeners once audio is successfully playing
-        window.removeEventListener('scroll', startMusic);
-        window.removeEventListener('touchstart', startMusic);
-        document.removeEventListener('click', startMusic);
-      }).catch(error => {
-        // If it fails, we keep the listeners active for the next interaction
-        console.log("Waiting for user interaction to unlock audio.");
-      });
-    }
-
-    // Trigger music on scroll
-    window.addEventListener('scroll', startMusic, { passive: true });
-    
-    // Also trigger on touch/click for better mobile compatibility
-    window.addEventListener('touchstart', startMusic, { passive: true });
-    document.addEventListener('click', startMusic, { once: true });
-
-    // Initial check in case autoplay is already allowed
+    // Initialize lanterns for the entry screen
     window.addEventListener('load', () => {
-        // Some browsers allow small delay before interaction
-        setTimeout(startMusic, 1000);
+      if (typeof createLanterns === 'function') {
+        createLanterns("entry-lanterns");
+      }
     });
+
+    // Lock scroll while entry screen is active
+    document.body.style.overflow = 'hidden';
+
+    function enterSite() {
+      // Reset to top to ensure hero section is seen first
+      window.scrollTo(0, 0);
+
+      // Unlock scroll
+      document.body.style.overflow = '';
+      
+      // Play music (guaranteed because user clicked)
+      audio.play().then(() => {
+        console.log("Music started 🎵");
+      }).catch(err => {
+        console.log("Playback error:", err);
+      });
+
+      // Fade out entry screen
+      const entry = document.getElementById('entry-screen');
+      entry.style.opacity = "0";
+
+      setTimeout(() => {
+        entry.style.display = "none";
+      }, 1000);
+
+      // Show main content
+      const main = document.getElementById('main-content');
+      main.style.opacity = "1";
+      main.style.pointerEvents = "auto";
+    }
   </script>
+  <script src="script.js"></script>
 </body>
+
 </html>
