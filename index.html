@@ -205,28 +205,42 @@
 
   <script>
     const audio = document.getElementById('wedding-song');
+    let hasPlayed = false;
 
-    // Function to handle the initial play unlock
-    function unlockAudio() {
+    /**
+     * Attempts to play audio. 
+     * Browsers usually require a user interaction (like a scroll or click) 
+     * to allow audio playback.
+     */
+    function startMusic() {
+      if (hasPlayed) return;
+
       audio.play().then(() => {
-        console.log("Audio playing successfully.");
-        // Once playing, remove all the listeners so they don't fire again
-        ["click", "touchstart", "scroll", "keydown"].forEach(event => {
-          document.removeEventListener(event, unlockAudio);
-        });
+        hasPlayed = true;
+        console.log("Music started on scroll.");
+        
+        // Remove listeners once audio is successfully playing
+        window.removeEventListener('scroll', startMusic);
+        window.removeEventListener('touchstart', startMusic);
+        document.removeEventListener('click', startMusic);
       }).catch(error => {
-        console.log("Autoplay blocked, waiting for more definitive interaction.");
+        // If it fails, we keep the listeners active for the next interaction
+        console.log("Waiting for user interaction to unlock audio.");
       });
     }
 
-    // Modern mobile browsers require a user interaction to play audio.
-    // We attach the play function to the most common interaction types.
-    ["click", "touchstart", "scroll", "keydown"].forEach(event => {
-      document.addEventListener(event, unlockAudio, { once: false });
-    });
+    // Trigger music on scroll
+    window.addEventListener('scroll', startMusic, { passive: true });
+    
+    // Also trigger on touch/click for better mobile compatibility
+    window.addEventListener('touchstart', startMusic, { passive: true });
+    document.addEventListener('click', startMusic, { once: true });
 
-    // Try playing immediately on load (works on some desktops/settings)
-    window.addEventListener('load', unlockAudio);
+    // Initial check in case autoplay is already allowed
+    window.addEventListener('load', () => {
+        // Some browsers allow small delay before interaction
+        setTimeout(startMusic, 1000);
+    });
   </script>
 </body>
 </html>
