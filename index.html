@@ -11,37 +11,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Music Button Styling */
-    #music-btn {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      z-index: 1000;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      background: rgba(212, 175, 55, 0.95);
-      border: 3px solid #E5E4E2;
-      color: #E5E4E2;
-      font-size: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    #music-btn:hover {
-      transform: scale(1.1);
-      background: rgba(212, 175, 55, 1);
-    }
-  </style>
 </head>
 <body class="text-[#E5E4E2]">
 
-  <!-- Background Wedding Song -->
-  <audio id="wedding-song" loop>
+  <!-- Background Wedding Song - Auto Play -->
+  <audio id="wedding-song" loop autoplay>
     <source src="song.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
@@ -260,47 +234,40 @@
     </div>
   </section>
 
-  <!-- Music Control Button -->
-  <button id="music-btn" title="Toggle Music">🎵</button>
-
   <script src="script.js"></script>
 
   <script>
-    // Wedding Background Music Control
+    // Automatic Background Music - Plays every time website opens
     const audio = document.getElementById('wedding-song');
-    const musicBtn = document.getElementById('music-btn');
-    let isPlaying = true;
 
-    // Try to autoplay
-    function tryPlayMusic() {
-      audio.muted = false;
-      audio.play().catch(() => {
-        // Autoplay blocked - will wait for user interaction
+    function playWeddingSong() {
+      audio.volume = 0.6;  // Moderate volume (you can adjust between 0.3 to 0.8)
+      audio.play().catch(error => {
+        console.log("Autoplay prevented by browser. Playing on user interaction.");
       });
     }
 
-    // Initial attempt
+    // Try to play as soon as page loads
     window.addEventListener('load', () => {
-      tryPlayMusic();
+      playWeddingSong();
     });
 
-    // Play on first user interaction (mobile friendly)
+    // Fallback: Play on first user tap/click (important for mobile & some browsers)
+    let hasInteracted = false;
     document.addEventListener('click', () => {
-      if (audio.paused) {
-        tryPlayMusic();
+      if (!hasInteracted && audio.paused) {
+        playWeddingSong();
+        hasInteracted = true;
       }
     }, { once: true });
 
-    // Toggle button functionality
-    musicBtn.addEventListener('click', () => {
-      if (isPlaying) {
+    // Optional: Pause music when user leaves the tab, resume when back
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
         audio.pause();
-        musicBtn.innerHTML = '🔇';
-      } else {
+      } else if (!audio.paused) {
         audio.play();
-        musicBtn.innerHTML = '🎵';
       }
-      isPlaying = !isPlaying;
     });
   </script>
 </body>
