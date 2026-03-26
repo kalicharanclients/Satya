@@ -1,7 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
-function createLanterns() {
-  const container = document.getElementById("lanterns");
+function createLanterns(containerId = "lanterns") {
+  const container = document.getElementById(containerId);
   if (!container) return;
   for (let i = 0; i < 14; i++) {
     const lantern = document.createElement("img");
